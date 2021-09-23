@@ -1,6 +1,6 @@
 function checkUsername(){
     var username=document.getElementById("username").value;///get id with value
-    var usernamepattern=/^[A-Za-z .]{0,5}$/;////Regular expression
+    var usernamepattern=/^[A-Za-z .]{0,30}$/;////Regular expression
     if(usernamepattern.test(username))
     {
         document.getElementById("username").value;
