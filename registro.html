@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
+    <script src="form.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -25,23 +26,23 @@
             <label for="">REGISTRO</label>
         </div>
         <div>
-        <label for="" id="username"> Username</label><br>
-        <input type="text">
+        <label for="" > Username</label><br>
+        <input type="text" id="username" required>
         </div>
         <div>
-        <label id="Correo">  Correo </label><br>
-        <input type="email">
+        <label>  Correo </label><br>
+        <input type="email" id="Correo"  >
         </div>
         <div>
-        <label id="contrasena">Constrasena</label><br>
-        <input type="password">
+        <label >Constrasena</label><br>
+        <input type="password" id="contrasena" >
         </div>
         <div>
-        <label for="" id="confir_contrasena">Confirmar Contrasena</label><br>
-        <input type="password">
+        <label for="" >Confirmar Contrasena</label><br>
+        <input type="password" id="confir_contrasena" >
         </div>
         <div id="btn-div"><br>
-            <input type="submit" id="btn-submit-form">
+            <input type="submit" id="btn-submit-form" onclick="checkUsername(); checkCorreo(); checkContrasena(); checkConfirmContrasena()">
         </div>
     </form>
 </body>
