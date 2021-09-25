@@ -1,52 +1,92 @@
-function checkUsername(){
-    var username=document.getElementById("username").value;///get id with value
-    var usernamepattern=/^[A-Za-z .]{0,30}$/;////Regular expression
-    if(usernamepattern.test(username))
-    {
-        document.getElementById("username").value;
-        alert("username no cumple los requisitos")
-        return False;
+function  checkUsername(valor){
+   
+    if( valor !=""){
+    if ((/^\w+([\.-]?)\w+/).test(valor)){
+       
+        if (valor.length<30){
+        return true;
+        }
+        else{
+            return false;
+        }
     }
-    else
-    {
-        document.getElementById("username").value;
-        alert("cumple con los requisitos")
-        return True;
+    else{
+        return false;
+    }
+    
+}
+else{
+    return false;
+}
+}
+function checkCorreo(valor){
+    if (valor!=""){
+        if (/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(valor))
+        {
+            return true;
+        }
+        else{
+           
+            return false;
+        }
+    }
+    else{
+        return false;
     }
     }
 
-// function  checkCorreo(){
-//     var username=document.getElementById("Correo").value;///get id with value
-//     var usernamepattern=/^[A-Za-z .]{0,30}$/;////Regular expression
-//     if(usernamepattern.test(username))
-//     {
-//         document.getElementById("Correo").innerHTML="cumple con los requerimientos";
-//     }
-//     else
-//     {
-//         document.getElementById("Correo").style.backgroundColor='red'; }
-//     }
+function checkContrasena(valor){
+    if(valor!=""){
+       
+        if (/^(?=.*\d)(?=.*[a-zñ]).*[A-ZÑ]/.test(valor)){
+            if (valor.length >=8){
+                return true;
+            }
+            else{
+                return false;
+            }
+           
+        }
+        else{
+            return false;
+        }
+            
+        
+    }
+    else{
+        return false;
+    }
+}
 
-// function checkContrasena(){
-//     var username=document.getElementById("contrasena").value;///get id with value
-//     var usernamepattern=/^[A-Za-z .]{0,30}$/;////Regular expression
-//     if(usernamepattern.test(username))
-//     {
-//         document.getElementById("contrasena").style.backgroundColor='yellow';
-//     }
-//     else
-//     {
-//         document.getElementById("contrasena").style.backgroundColor='red'; }
-//     }
-
-// function checkCofirmContrasena(){
-//     var username=document.getElementById("confirm_contrasena").value;///get id with value
-//     var usernamepattern=/^[A-Za-z .]{0,30}$/;////Regular expression
-//     if(usernamepattern.test(username))
-//     {
-//         document.getElementById("confirm_contrasena").style.backgroundColor='yellow';
-//     }
-//     else
-//     {
-//         document.getElementById("confirm_contrasena").style.backgroundColor='red'; }
-//     }
+function checkConfirmContrasena(valor1,valor2){
+    
+    if(valor1!="" && valor2!=""){
+       
+        if ((/^(?=.*\d)(?=.*[a-zñ]).*[A-ZÑ]/.test(valor1)) && (/^(?=.*\d)(?=.*[a-zñ]).*[A-ZÑ]/.test(valor2))) {
+            if ((valor1.length >=8) && (valor2.length>=8)) {
+                 if(valor1==valor2){
+                    return true;
+                     }
+                 else {
+                   return false;
+                    }
+            }
+            else{
+                return false;
+            }
+           
+        }
+        else{
+            return false;
+        }
+            
+        
+    }
+    else{
+        return false;
+    }
+}
+module.exports.checkCorreo = checkCorreo;
+module.exports.checkUsername = checkUsername;
+module.exports.checkContrasena = checkContrasena;
+module.exports.checkConfirmContrasena=checkConfirmContrasena;
